@@ -1,0 +1,96 @@
+Melakukan Open Deposit
+Parameter	Deskripsi
+API URL	
+https://ariepulsa.my.id/api/qrisrealtime
+api_key	
+PHv2blrLtGX99GH5pcUubETfUoHT0dBS
+action	get-deposit
+jumlah	Nominal
+reff_id	Reffidmu
+kode_channel	QRISREALTIME
+Contoh Respon Yang Di Dapat
+
+Jika Pemesanan Sukses
+{
+    "status": true,
+    "data": {
+        "kode_deposit": "9879410072",
+        "metode": "QRISREALTIME",
+        "nominal": 3000,
+        "fee": "781",
+        "jumlah_transfer": 3781,
+        "saldo_didapat": 3000,
+        "status": "Pending",
+        "link_qr": "https://ariepulsa.my.id/assets/images/qris/qris_1739372224.png"
+    }
+}
+
+Jika Pemesanan Gagal
+{
+    "status": false,
+    "data": {
+    "pesan": "Permintaan Tidak Sesuai"
+    }
+}
+
+Melakukan Cek Status Deposit
+Parameter	Deskripsi
+API URL	
+https://ariepulsa.my.id/api/qrisrealtime
+api_key	
+PHv2blrLtGX99GH5pcUubETfUoHT0dBS
+action	status-deposit
+kode_deposit	Kode Deposit
+Contoh Respon Yang Didapat
+Jika Respon Sukses
+{
+    "status": true,
+    "data": {
+        "kode_deposit": "8641897556",
+        "status": "Success",
+        "jumlah_transfer": "2827"
+    }
+}
+
+Note :
+- Success
+- Pending
+- Error
+- Saldo Langsung Masuk Dan Tidak Tertahan
+
+Jika Respon Gagal
+{
+    "status": false,
+    "data": {
+    "pesan": "Permintaan Tidak Sesuai"
+    }
+}
+
+Melakukan Cancel Deposit
+Parameter	Deskripsi
+API URL	
+https://ariepulsa.my.id/api/qrisrealtime
+api_key	
+PHv2blrLtGX99GH5pcUubETfUoHT0dBS
+action	cancel-deposit
+kode_deposit	Kode Deposit
+Contoh Respon Yang Didapat
+Jika Respon Sukses
+{
+    "status": true,
+    "data": {
+        "kode_deposit": "8641897556",
+        "status": "Error",
+        "jumlah_transfer": "2827"
+    }
+}
+
+Jika Respon Gagal
+{
+    "status": false,
+    "data": {
+    "pesan": "Permintaan Tidak Sesuai"
+    }
+}
+
+
